@@ -1,6 +1,7 @@
 ﻿//Программа, которая выводит название дня по заданному номеру
 
-/*//Запрашиваем входные данные
+//Первый вариант решения
+//Запрашиваем входные данные
 Console.WriteLine("Введите число от 1 до 7");
 //Считываем данные с консоли
 string? inputLine = Console.ReadLine();
@@ -8,27 +9,17 @@ string? inputLine = Console.ReadLine();
 //Проверяем, чтобы данные не были пустыми
 if (inputLine != null)
 {
-    //Именуем массив
-    string[] weekDay = new string[7];
-    weekDay[0] = "Понедельник";
-    weekDay[1] = "Вторник";
-    weekDay[2] = "Среда";
-    weekDay[3] = "Четверг";
-    weekDay[4] = "Пятница";
-    weekDay[5] = "Суббота";
-    weekDay[6] = "Воскресенье";
-
     //Переводим в числовой формат (целочисленное значение)
     int dayNum = int.Parse(inputLine);
-          
-    //Выводим результат в консоль. 
-    Console.Write(inputLine);
-    Console.Write(" это ");
-    Console.WriteLine(weekDay[dayNum-1]);
-}
-*/
 
-/*//Второй вариант
+    string outDayOfWeek = System.Globalization.CultureInfo.GetCultureInfo("ru-RU").DateTimeFormat.GetDayName((DayOfWeek)Enum.GetValues(typeof(DayOfWeek)).GetValue(dayNum));
+
+    //Выводим результат в консоль. 
+    Console.WriteLine(inputLine + " это " + outDayOfWeek);
+}
+
+//Второй вариант
+/*
 //Запрашиваем входные данные
 Console.WriteLine("Введите число от 1 до 7");
 //Считываем данные с консоли
@@ -61,7 +52,9 @@ if (inputLine != null)
     Console.WriteLine(outDayOfWeek);
 }
 */
-//Третий вариант.
+
+//Третий вариант решения
+/*
 //Запрашиваем входные данные
 Console.WriteLine("Введите число от 1 до 7");
 //Считываем данные с консоли
@@ -70,14 +63,22 @@ string? inputLine = Console.ReadLine();
 //Проверяем, чтобы данные не были пустыми
 if (inputLine != null)
 {
+    //Именуем массив
+    string[] weekDay = new string[7];
+    weekDay[0] = "Понедельник";
+    weekDay[1] = "Вторник";
+    weekDay[2] = "Среда";
+    weekDay[3] = "Четверг";
+    weekDay[4] = "Пятница";
+    weekDay[5] = "Суббота";
+    weekDay[6] = "Воскресенье";
+
     //Переводим в числовой формат (целочисленное значение)
     int dayNum = int.Parse(inputLine);
-
-    string outDayOfWeek = System.Globalization.CultureInfo.GetCultureInfo("ru-RU").DateTimeFormat.GetDayName((DayOfWeek)Enum.GetValues(typeof(DayOfWeek)).GetValue(dayNum));
-
+          
     //Выводим результат в консоль. 
     Console.Write(inputLine);
     Console.Write(" это ");
-    Console.WriteLine(outDayOfWeek);
+    Console.WriteLine(weekDay[dayNum-1]);
 }
-
+*/

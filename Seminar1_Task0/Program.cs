@@ -1,25 +1,18 @@
-﻿//Запрашиваем входные данные
-Console.WriteLine("Введите целое число");
+﻿Console.WriteLine("Введите целое число"); //Запрашиваем входные данные
+string? inputLine = Console.ReadLine(); //Считываем данные с консоли
 
-//Считываем данные с консоли
-string? inputLine = Console.ReadLine();
-
-//Проверяем, чтобы данные не были пустыми
-if (inputLine != null)
+if (inputLine != null) //Проверяем, чтобы данные не были пустыми
 {
-    //Переводим в числовой формат (целочисленное значение)
-    int number = int.Parse(inputLine);
-    
+    int number = int.Parse(inputLine); //Переводим в числовой формат (целочисленное значение)
+
     //Находим квадрат числа. Ниже два варианта, как это можно сделать. 
-    //int outResult = number * number; - первый вариант
-    int outResult = (int)Math.Pow(number,2); //второй вариант
+    //int outResult = number * number; // первый вариант
+    int outResult = (int)Math.Pow(number, 2); //второй вариант
 
-    //Выводим результат в консоль. Предварительно выводим текст, описывающий, что именно посчиталось
-    Console.Write("Квадрат заданного числа равен ");
-    //Console.WriteLine(outResult);
-
+    Console.WriteLine("Квадрат заданного числа равен " + outResult); //Выводим результат в консоль. Предварительно выводим текст, описывающий, что именно посчиталось
+    
     //Второй вариант решения задачи. В одно действие
-    Console.WriteLine(Math.Pow(int.Parse(inputLine),2));
+    //Console.WriteLine(Math.Pow(int.Parse(inputLine), 2));
 }
 
 
