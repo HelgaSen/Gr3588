@@ -1,22 +1,22 @@
 ﻿//Программа, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
-Console.WriteLine("Введите число");
-string digit = Console.ReadLine() ?? "0";
-int checkNumber = 0;
-if(int.TryParse(digit,out checkNumber))
+Console.WriteLine("Введите число"); //запрашиваем ввод данных
+string digit = Console.ReadLine() ?? "0"; //считываем данные с консоли
+int checkNumber = 0; //объявляем переменную. Используется только для определения типа введенных данных
+if (int.TryParse(digit, out checkNumber)) //условия корректности ввода, запись значения, если данные корректны
 {
-    if(digit.Length >=3) 
-        {
-            char[] array = new char[digit.Length]; 
-            array = digit.ToCharArray(0,digit.Length);
-            Console.WriteLine(array[2]);    
-        }
+    if (digit.Length >= 3) //проверка наличия третьей цифры
+    {
+        char[] array = new char[digit.Length]; //создаем массив символов
+        array = digit.ToCharArray(0, digit.Length); //записываем данные с консоли в массив
+        Console.WriteLine(array[2]); //выводим в консоль третий элемент массива
+    }
     else
-        {
-            Console.WriteLine("Третьей цифры нет");   
-        }
+    {
+        Console.WriteLine("Третьей цифры нет"); //сообщение, если ввели число менее трех цифр
+    }
 }
 else
 {
-    Console.WriteLine("Вы ввели не число");   
+    Console.WriteLine("Вы ввели не число"); //сообщение, если ввели не цифры
 }
