@@ -1,6 +1,38 @@
 ﻿//Программа, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
+//Нулевой вариант с использованием Dictionary
+
+var week = new Dictionary<int, string>()
+    {
+        [1] = "понедельник",
+        [2] = "вторник",
+        [3] = "среда",
+        [4] = "четверг",
+        [5] = "пятница",
+        [6] = "суббота",
+        [7] = "воскресенье"
+    };
+Console.WriteLine("Введите число от 1 до 7"); //запрос введения данных
+int weekDay = int.Parse(Console.ReadLine() ?? "0"); //считываем данные, проверяя на NULL, преобразовываем в целочисленное значение
+
+if (weekDay > 0 && weekDay < 8) //условие для корректных данных
+{   
+    if(weekDay >0 && weekDay <6)
+    {
+        Console.WriteLine(weekDay + " - это " + week[weekDay] + ". Рабочий день");
+    }
+    else
+    {
+         Console.WriteLine(weekDay + " - это " + week[weekDay] + ". Выходной день");
+    }
+}
+else
+{
+    Console.WriteLine("Данные введены неверно. попробуйте еще раз"); //сообщение о некорректных данных.
+}
+
 //Первый вариант решения.
+/*
 void DayOfWeekCheck(int day) //создаем метод
 {
     string outDayOfWeek = System.Globalization.CultureInfo.GetCultureInfo("ru-RU").DateTimeFormat.GetDayName((DayOfWeek)Enum.GetValues(typeof(DayOfWeek)).GetValue(day)); //получаем название дня недели
@@ -24,7 +56,7 @@ else
 {
     Console.WriteLine("Данные введены неверно. попробуйте еще раз"); //сообщение о некорректных данных.
 }
-
+*/
 //Второй вариант решения
 /*
 void DayOfWeekCheck(int day)
