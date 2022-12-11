@@ -5,11 +5,11 @@ char symbol = '-';
 
 string outLine = LineBuilder(number, 1,numberLength);
 PrintLine(symbol,outLine.Length);
-PrintData("", outLine, number);
+PrintData("", outLine);
 PrintLine(symbol,outLine.Length);
 
 outLine = LineBuilder(number, 3,numberLength);
-PrintData("", outLine, number);
+PrintData("", outLine);
 PrintLine(symbol,outLine.Length);
 
 int ReadData(string msg)
@@ -18,7 +18,7 @@ int ReadData(string msg)
     return int.Parse(Console.ReadLine() ?? "0");
 }
 
-void PrintData(string msg, string result, int count)
+void PrintData(string msg, string result)
 {
     Console.WriteLine(msg + result);
 }
