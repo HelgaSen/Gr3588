@@ -37,4 +37,3 @@ int[] ConvertArray(int[] array)
     }
     return outArray;
 }
-
